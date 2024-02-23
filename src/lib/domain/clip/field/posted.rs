@@ -1,5 +1,4 @@
 use crate::domain::time::Time;
-use super::ClipError;
 use serde::{Deserialize, Serialize};
 use derive_more::Constructor;
 

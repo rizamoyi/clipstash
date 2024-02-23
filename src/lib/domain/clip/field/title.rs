@@ -1,9 +1,9 @@
-use super::ClipError;
+use crate::domain::clip::ClipError;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;
 
 
-#[derive(Debug, Clone, Deserialize, Serialize)];
+#[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct Title(Option<String>);
 
 impl Title {

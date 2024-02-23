@@ -1,4 +1,4 @@
-use super::ClipError;
+use crate::domain::clip::ClipError;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;
 
@@ -6,7 +6,7 @@ use std::str::FromStr;
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, PartialOrd)]
 pub struct Password(Option<String>);
 
-impl Passsword {
+impl Password {
   pub fn new<T: Into<Option<String>>>(password: T) -> Result<Self, ClipError> {
     let password: Option<String> = password.into();
 
@@ -18,17 +18,17 @@ impl Passsword {
           Ok(Self(None))
         }
       }
+      None => Ok(Self(None))
     }
-    None => Ok(Self(None))
   }
 
   pub fn into_inner(self) -> Option<String> {
     self.0
   }
 
-  pub fn has_password(&self) -> bool {
-    self.into_iter()
-  }
+  // pub fn has_password(&self) -> bool {
+  //   self.into_iter()
+  // }
 }
 
 impl Default for Password {
