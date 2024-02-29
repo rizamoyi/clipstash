@@ -1,8 +1,9 @@
 use crate::domain::clip::ClipError;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;
+use derive_more::From;
 
-#[derive(Debug, Clone, Deserialize, Serialize)]
+#[derive(Debug, Clone, From, Deserialize, Serialize)]
 pub struct ShortCode(String);
 
 
