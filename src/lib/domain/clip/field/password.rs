@@ -26,9 +26,9 @@ impl Password {
     self.0
   }
 
-  // pub fn has_password(&self) -> bool {
-  //   self.into_iter()
-  // }
+  pub fn has_password(&self) -> bool {
+    self.into_iter()
+  }
 }
 
 impl Default for Password {
